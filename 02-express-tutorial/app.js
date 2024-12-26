@@ -1,15 +1,21 @@
-const { products } = require("./data");
-
-// The require statement to import the express module
+const { products } = require('./data');
 const express = require('express');
-
-// Creation of the app as returned from calling express()
+const people = require('./routes/people')
 const app = express();
 
 // app.use statements for the middleware. You’ll eventually use many kinds of middleware, but for now the only middleware we are using is express.static()
-app.use(express.static("./public"));
+const logger = (req, res, next) => {
+  const method = req.method
+  const url = req.url
+  const time = new Date()
+  console.log(method, url, time)
+  next()
+}
+app.use(logger, express.static("./methods-public"));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use("/api/v1/people", people);
 
-// app.get and app.post statements for the routes you will handle. Eventually these will be refactored into router modules, but for now you can put them inline
 app.get('/api/v1/test', (req, res)=>{
   res.json({ message: "It worked!" });
 });
