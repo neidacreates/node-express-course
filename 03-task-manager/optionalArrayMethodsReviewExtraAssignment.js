@@ -55,7 +55,7 @@ object.behavior()
 //
 // - Array.prototype.push (does not take a callback)
 //
-// These guys all take a callback as input, and then call the callabck for
+// These guys all take a callback as input, and then call the callback for
 // each item in the array
 //
 // - Array.prototype.filter
@@ -73,14 +73,14 @@ object.behavior()
 // - Array.prototype.map
 //   - The callback recieves each item of the array. The return value is pushed
 //     into a new array
-   const numbers = [1, 2, 3];
-   const doubles = numbers.map((i) => i * 2);
+  const numbers = [1, 2, 3];
+  const doubles = numbers.map((i) => i * 2);
 
 // - Array.prototype.forEach
 //   - `forEach` is like a "for" loop. It calls the callback for every item in
 //     the array
-   evenNumbers.forEach((thingy) => console.log('even', thingy));
-   doubles.forEach((d) => console.log('doubled!', d));
+  evenNumbers.forEach((thingy) => console.log('even', thingy));
+  doubles.forEach((d) => console.log('doubled!', d));
 
 // - Array.prototype.reduce
 //   - A bit tricky
@@ -156,6 +156,9 @@ const names = [
   'Mariana Gomez',
   'Amy You'
 ];
+
+// - Create a new array with only each person's last name
+
 
 ///////////////////////////////////////////////////////////////////////////////
 //// put your answers above if you wish to do the challenges on your own //////
